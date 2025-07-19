@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           <h2 className="text-xl font-bold text-white">KyoWear</h2>
           <p className="text-sm mt-2 text-slate-400">
-            
+            Exclusive products, unique designs. Bring out your best style with Acme.
           </p>
         </div>
 

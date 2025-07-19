@@ -38,7 +38,7 @@ export default function LoginPage() {
         <input
           type="email"
           placeholder="Email"
-          className="w-full px-4 py-2 border rounded-lg focus:outline-none"
+          className="w-full px-4 py-2 text-black border rounded-lg focus:outline-none"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
