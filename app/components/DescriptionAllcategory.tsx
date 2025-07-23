@@ -126,10 +126,6 @@ export default function DescriptionAllcategory({
             </div>
           </div>
         )}
-
-        <button className="mt-6 px-6 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-lg transition-colors">
-          Tambahkan ke Keranjang
-        </button>
       </div>
 
       {/* Lightbox */}
