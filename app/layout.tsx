@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'ACME STORE | Premium Quality Products',
+  title: 'KYOWEAR | Premium Quality Products',
   description: 'Discover our exclusive collection',
 }
 
