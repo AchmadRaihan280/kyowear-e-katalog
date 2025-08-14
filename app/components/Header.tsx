@@ -82,7 +82,7 @@ export default function Header() {
           <form onSubmit={handleSearch} className="flex gap-2 items-center">
             <input
               type="text"
-              placeholder="Cari produk..."
+              placeholder="Search Products..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="flex-1 px-4 py-2 text-sm text-white bg-slate-800 border border-slate-700 rounded-lg outline-none placeholder-gray-400"
@@ -90,10 +90,11 @@ export default function Header() {
             />
             <button
               type="submit"
-              className="bg-pink-600 hover:bg-pink-700 text-white px-4 rounded-lg transition-colors"
+              className="bg-pink-600 hover:bg-pink-700 text-white px-5 py-2 rounded-lg transition-colors text-sm font-medium"
             >
-              Cari
+              Search
             </button>
+
             <button
               type="button"
               onClick={() => setShowSearch(false)}
