@@ -1,12 +1,13 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { User } from "lucide-react";
+import { User, Search } from "lucide-react";
 import { useState } from "react";
 
 export default function Header() {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
+  const [showSearch, setShowSearch] = useState(false);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,26 +17,36 @@ export default function Header() {
   };
 
   return (
-    <header className="flex flex-col sm:flex-row sm:justify-between sm:items-center px-6 py-4 bg-slate-900 border-b border-gray-800 gap-3 sm:gap-0">
+    <header className="flex items-center justify-between px-4 py-3 bg-slate-900 border-b border-gray-800">
       <div className="text-white font-bold text-xl">KyoWear</div>
-      <form
-        onSubmit={handleSearch}
-        className="flex w-full sm:w-auto max-w-md bg-white rounded-full overflow-hidden shadow-md"
-      >
-        <input
-          type="text"
-          placeholder="Cari produk..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="flex-1 px-4 py-2 text-sm text-gray-800 outline-none"
-        />
-        <button
-          type="submit"
-          className="bg-pink-600 hover:bg-pink-700 text-white px-4 sm:px-6 transition-colors"
+      {showSearch ? (
+        <form
+          onSubmit={handleSearch}
+          className="flex flex-1 mx-4 bg-white rounded-full overflow-hidden shadow-md transition-all duration-300"
         >
-          Cari
+          <input
+            type="text"
+            placeholder="Cari produk..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="flex-1 px-4 py-2 text-sm text-gray-800 outline-none"
+            autoFocus
+          />
+          <button
+            type="submit"
+            className="bg-pink-600 hover:bg-pink-700 text-white px-4 transition-colors"
+          >
+            Cari
+          </button>
+        </form>
+      ) : (
+        <button
+          onClick={() => setShowSearch(true)}
+          className="text-white hover:text-pink-500 transition duration-300 mx-4"
+        >
+          <Search className="w-5 h-5" />
         </button>
-      </form>
+      )}
 
       <nav className="flex gap-4 text-gray-400">
         <Link
